@@ -11,11 +11,35 @@ const orderSchema = new mongoose.Schema({
     ref:'User',
   },
   items: [{
+    type:Object,
+    required:true,
+}],
+  phone:{
+    type:String,
+    required:true,
+  },
+  address:{
+    type:String,
+    required:true,
+  },
+  paymentType:{
+    type:String,
+    default: `COD`
+  },
+  status:{
+    type:String,
+    default: `order_placed`
+  }
+/*
+{
     // Assuming a simple schema for items
     name: String,
     quantity: Number,
     price: Number
-  }],
+  }
+*/
+
+
 //   totalPrice: {
 //     type: Number,
 //     required: true

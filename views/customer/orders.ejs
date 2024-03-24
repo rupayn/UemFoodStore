@@ -1,0 +1,35 @@
+ <section class="orders light-section"> 
+    <% if(orders.length){ %>
+        <div class="container mx-auto pt-12" >
+            <h1 class="font-bold text-lg mb-4" >All Orders</h1>
+            <table class="w-full table-auto bg-white">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2 text-left"> Orders </th>
+                            <th class="px-4 py-2 text-left text-black"> Address </th>
+                            <th class="px-4 py-2 text-left"> Time </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% orders.forEach((order)=>{ %>
+                        <tr>
+                            <td class="border px-4 py-2 orderId"  >efregtwewre</td>
+                            <td class="border px-4 py-2" >Test address</td>
+                            <td class="border px-4 py-2" >1.23pm</td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+            </table>
+        </div>
+    <% }else{ %>
+        <div class="mt-20">
+            <p class=" text-center text-6xl pb-8">You have not ordered yet 😐</p>
+            <p class="text-center pb-4">You have nothing in order section. </p>
+            <p class="text-center mb-10 text-xl">To order Delicious food go to Main page😉</p>
+        </div>
+        <div class="py-10">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeqybZd14_xQjHmlCaq84O27RdaqCKACCIp8EoCcedvGVHIhqipzNa5TlB2NCQcc8TvPo&usqp=CAU" alt="img" class="empty-cart-img">
+        </div>
+        <a href="/items" class="py-6 px-20 backCart rounded-full mb-20">GO TO ORDER</a>
+    <% } %>
+</section>  

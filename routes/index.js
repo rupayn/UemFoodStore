@@ -4,8 +4,8 @@ const userModel =require('./users');
 const menuModel =require('./menu')
 const orderModel =require('./order')
 const passport=require('passport')
-let bodyParser = require('body-parser');
 let session= require('express-session')
+let bodyParser = require('body-parser');
 
 router.use(bodyParser.json())
 // Custom middleware to access session globally
@@ -19,6 +19,8 @@ router.use((req, res, next) => {
 });
 const authController=require('../controller/auth.controller')
 const cartController=require('../controller/cart.controller')
+const orderController=require('../controller/order.controller')
+
 // const localStrategy=require('passport-local')
 const plm=require('passport-local-mongoose')
 
@@ -84,26 +86,13 @@ router.get('/contact-us', (req, res) => {
 
 
 
-router.get("/createorder",async function(req,res,next){
-  let CreatedOrder=await orderModel.create({
-    customerName: "Dev",
-    items: [{
-      // Assuming a simple schema for items
-      name: "Chicken",
-      quantity: 100,
-      price: 100
-    }],
-    user:"65f4895a122f210555f01715",
-  })
-  let user=await userModel.findOne({
-    _id:"65f4895a122f210555f01715",
-  })
-  user.order.push(CreatedOrder._id);
-  await user.save();
+router.post('/orders',orderController().store)
+router.get('/orders',async(req,res) => {
+  let uname=req.globalSession
+  orders= await orderModel.find({ user: req.user._id })
+  res.render('customer/orders',{user:uname,orders:orders});
 
-  res.send(CreatedOrder)
 })
-
 
 
 module.exports = router;
