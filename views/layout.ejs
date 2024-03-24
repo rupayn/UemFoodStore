@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style2.css" />
+    <link rel="stylesheet" href="/stylesheets/contactUs.css" />
+    <link rel="stylesheet" href="/stylesheets/cart.css">
+
+    <title>UemK Canteen</title>
+  </head>
+  <body>
+    <div class="cursor1 rounded-full"></div>
+    <div class="cursor2"></div>
+    <main class="container">
+      <div class="py-5"></div>
+      <nav
+        class="flex items-center justify-around mx-auto w-11/12 h-20 rounded-full "
+      >
+        <div id="logo" class="font-bold text-lg"><a href="/">UEMFOOD</a></div>
+        <ul class="flex items-center justify-center">
+          <li class="px-5 text-lg"><a href="/">Home</a></li>
+          <li class="px-5 text-lg"><a href="/items">Items</a></li>
+          <li class="px-5 text-lg"><a href="/cart">Cart</a></li>
+          <li class="px-5 text-lg"><a href="/contact-us">Contact Us</a></li>
+        </ul>
+        <% if(user.passport){ %>
+          
+        <button id="navbut" class="px-5 py-2 rounded-full">
+          <a href="/logout" >Log out</a>
+        </button>
+        <% }else{ %>
+          <button id="navbut" class="px-5 py-2 rounded-full">
+            <a href="/login" >Log in</a>
+          </button>
+        <% } %>
+      </nav>
+      <%- body %>
+      <footer class="pb-10">
+        <div class="flex flex-col items-center justify-center">
+          <h1>About Us</h1>
+          <p class="w-11/12 about py-5">
+            Welcome to the UEMK College's Food Delivery App – an epicurean haven
+            designed exclusively for the dynamic UEMK community! At the heart of
+            our mission lies the dedication to bring you a rich tapestry of
+            culinary delights, carefully curated and conveniently delivered to
+            your doorstep. Our goal is to redefine your college experience by
+            offering a seamless and delightful food ordering service tailored to
+            your unique tastes and preferences. Dive into the extensive expanse
+            of our menu, meticulously crafted to cater to diverse palates. From
+            hearty and wholesome meals to enticing gourmet offerings, our array
+            of options is designed to elevate your campus dining experience.
+            Placing orders is a breeze, ensuring that you can savor the
+            delightful flavors that amplify the joy of campus life. Your
+            satisfaction is our paramount concern. We strive to provide you with
+            nothing short of excellence in every culinary creation. As you
+            embark on this gastronomic journey with us, rest assured that we are
+            committed to delivering not just meals but an experience that
+            enhances your overall well-being during your college days. Embrace
+            the unparalleled fusion of taste, convenience, and community spirit
+            with UEMK College's Food Delivery App – where each bite is a
+            celebration, and every meal is an opportunity to create lasting
+            memories. We eagerly await the privilege of serving you the very
+            best in campus dining. Bon appétit!
+          </p>
+          <span class="border-solid border-2 border-grey-500 w-full"></span>
+          <p class="font-lg pt-5 Copyright">
+              Copyright &copy; 2024 UEMK College. All rights reserved.
+          </p>
+        </div>
+        <div></div>
+      </footer>
+    </main>
+  </body>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/javascripts/script.js"></script>
+</html>

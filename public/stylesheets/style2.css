@@ -1,0 +1,23 @@
+.item-img {
+  height: 600px;
+  mix-blend-mode: hard-light;
+}
+
+.btn-primary {
+  background-color: #FD930B;
+  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+
+.food-img {
+  height: 200px;
+  width: 200px;
+  aspect-ratio: 3/4;
+}
+
+.add-cart {
+  color: #FD930B;
+  background-color: #FFFFFF;
+  border: 2px solid #FD930B;
+}
+
+/*# sourceMappingURL=style2.css.map */

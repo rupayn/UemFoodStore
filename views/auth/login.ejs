@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container w-4/12 h-auto ">
+        <div class="content mt-20">
+          <!--pinterest logo-->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXIFMsJlbuAHxFFNiqx_FyoVHGV8CxrQRezA&usqp=CAU" alt="pin logo" class="img1 rounded-full mx-auto" />
+          <p class="header">Log in to see more</p>
+  
+          <form action="/login" method="post">
+            <input type="text" name="username" placeholder="username" class="detail"  /><br />
+            <input type="password" placeholder="Password" name="password" class="detail" required  />
+  
+            <h4>Forgot your password?</h4>
+  
+            <button type="submit" class="btn bg-red-600 int mt-10">Log in</button>
+          </form>
+  
+          <footer class="pt-5">
+            <p>
+              By continuing, you agree to our
+              <b>Terms of Service, Privacy policy.</b>
+            </p>
+            <hr />
+            <p>Not a Member yet? <a href="/register">Sign up</a></p>
+          </footer>
+        </div>
+      </div>
+      <a href="/register"><div class="upbtn">signup</div></a>
+      
+</body>
+</html>

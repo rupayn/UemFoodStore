@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/signup.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container w-4/12 h-full ">
+        <div class="content ">
+          <!--pinterest logo-->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXIFMsJlbuAHxFFNiqx_FyoVHGV8CxrQRezA&usqp=CAU" alt="pin logo" class="img1 rounded-full mx-auto" />
+          <p class="header w-full">Signup Now</p>
+          
+          <form action="/register" method="post">
+            <label for="username" class="mr-20 pr-20">Enter name</label>
+            <input type="text" name="username" placeholder="Enter your name" class="detail" /><br />
+            <label for="number" class=" mr-20 pr-20 w-full" >Enroll number</label>
+            <input type="number" name="number" placeholder="Enter your enrollment number" class="detail" /><br />
+            <label for="email" class=" mr-20 pr-20" >Enter Email</label>
+            <input type="email" name="email" placeholder="Enter your Email" class="detail" /><br />
+            <label for="password"  class="mr-20 pr-20" >Enter password</label>
+            <input type="password" name="password" placeholder="Enter your Password" class="detail" />
+            
+            <button type="submit" class="btn bg-red-600 int mt-10">Sign up</button>
+          </form>
+  
+          <footer class="pt-5">
+            <p>
+              By continuing, you agree to our
+              <b>Terms of Service, Privacy policy.</b>
+            </p>
+            <hr />
+            <p>Are you already a Member? <a href="/login">Log in</a></p>
+          </footer>
+        </div>
+      </div>
+      <a href="/login"><div class="upbtn">Log in</div></a>
+      
+</body>
+</html>

@@ -1,0 +1,62 @@
+<section class="flex items-center justify-center    flex-col">
+    <% if( scart ){ %>
+        
+            <div class="py-20 order container mx-auto w-1/2">
+                <div class="flex items-center border-b border-gray-300 pb-4">
+                    <img class="item-img h-32 rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXIFMsJlbuAHxFFNiqx_FyoVHGV8CxrQRezA&usqp=CAU"  alt="pizza">
+                    <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
+                </div>
+                <div class="pizza-list">
+                    <div class="flex items-center my-8">
+                        <!-- <img class="rounded-full w-24" src="" alt="img"> -->
+                        <div class="flex-1 ml-4">
+                            <h1>Order Name</h1>
+                        </div>
+                        <span class="flex-1">Order Quantity</span>
+                        <span class=" text-lg">Price</span>
+                    </div>
+                </div>
+                <% for(let oMenu of Object.values( scart.items )) { %>
+                <div class="pizza-list">
+                    <div class="flex items-center my-8">
+                        <img class="rounded-full w-24" src="<%= oMenu.item.image %>" alt="img">
+                        <div class="flex-1 ml-4">
+                            <h1> <%= oMenu.item.name %> </h1>
+                        </div>
+                        <span class="flex-1"><%= oMenu.qty %></span>
+                        <span class="font-bold text-lg">₹<%= oMenu.item.price %></span>
+                    </div>
+                </div>
+                <% } %>
+                <hr>
+                <div class="text-right py-4">
+                    <span class="text-lg font-bold">Total Amount:</span>
+                    <span class="amount text-2xl font-bold ml-2">₹<%= scart.totalPrice %></span>
+                    
+                    <div>
+                        <form  class="mt-12 text-black ">
+                            <input class="border p-2 w-1/2 border-gray-400 mb-4" type="number" placeholder="Enter Phone Number" required>
+                            <input class="border p-2 w-1/2 border-gray-400" type="text" placeholder="Enter Class Room Address" required>
+                            <div>
+                                <button class="mt-6 " type="submit"><a style="pointer-events: none;" class="btn-primary text-white px-6 py-2 rounded-full font-bold " href="#">Order Now</a></button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        <% }else{ %>
+            
+                <div class="mt-20">
+                    <p class=" text-center text-6xl pb-8">Cart Empty 😐</p>
+                    <p class="text-center pb-4">You have nothing in cart. </p>
+                    <p class="text-center mb-10 text-xl">To order Delicious food go to Main page😉</p>
+                </div>
+                <div class="py-10">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeqybZd14_xQjHmlCaq84O27RdaqCKACCIp8EoCcedvGVHIhqipzNa5TlB2NCQcc8TvPo&usqp=CAU" alt="img" class="empty-cart-img">
+                </div>
+                <a href="/items" class="py-6 px-20 backCart rounded-full mb-20">GO BACK</a>
+        <% } %>
+
+</section>
+  
