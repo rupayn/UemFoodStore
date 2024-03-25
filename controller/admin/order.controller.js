@@ -1,19 +1,14 @@
-const order = require("../../routes/order")
-
-const Order = require('../../../models/order')
-
-function orderController() {
+const Order=require("../../routes/order")
+function adminOrderController (){
     return {
-        index(req, res) {
-           order.find({ status: { $ne: 'completed' } }, null, { sort: { 'createdAt': -1 }}).populate('customerId', '-password').exec((err, orders) => {
-               if(req.xhr) {
-                   return res.json(orders)
-               } else {
-                return res.render('admin/orders')
-               }
-           })
-        }
+         index(req,res){
+            Order.find({ status :{$ne:'completed'}},null,{sort:{ 'createdAt':-1 }}).populate('user','-password').exec((err,orders)=>{
+                if(req.xhr){
+                    return res.json(orders)
+                }
+                 return res.render('admin/orders')
+            })
+         }
     }
 }
-
-module.exports = orderController
+module.exports = adminOrderController;

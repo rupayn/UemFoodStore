@@ -22,7 +22,8 @@ function orderController (){
                   address:address,
             })
             order.save().then(result=>{ 
-                return res.redirect('/')
+                delete req.session.cart
+                return res.redirect('/orders')
             }).catch(err=>{
                 return res.redirect('/cart');
             })

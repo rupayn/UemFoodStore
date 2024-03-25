@@ -215,7 +215,8 @@ nav #navbut {
   font-size: 50px;
   text-align: center;
   font-weight: 700;
-  margin-top: 30px;
+  margin-top: 20px;
+  line-height: 60px;
 }
 .page4 .cardp4 > p:nth-child(2) {
   text-align: center;
