@@ -4,7 +4,13 @@
 let movingCursor1 = document.querySelector('.cursor1');
 let movingCursor2 = document.querySelector('.cursor2');
 let addToCarts = document.querySelectorAll('.add-cart');
+let li= document.querySelectorAll('li');
 
+const scroll = new LocomotiveScroll({
+    el: document.querySelector('main'),
+    smooth: true,
+    lerp: 0.05, 
+});
 
 document.addEventListener("mousemove", (e) => {
     movingCursor1.style.left = `${e.x - 5}px`;
@@ -33,3 +39,22 @@ addToCarts.forEach((btn) => {
     });
 });
 
+gsap.to("nav button",{
+    // y:80,
+    duration:2,
+    // delay:,
+    // stagger: true,
+    opacity:1,
+});
+li.forEach((eli) => {
+    console.log(eli.innerText);
+    eli.addEventListener("mouseover",(el)=>{
+        el.target.style.transform="skew(180deg)";
+        el.target.style.transition="all ease 2s";
+    })
+    eli.addEventListener("mouseleave",(el)=>{
+        el.target.style.transform="skew(0deg)";
+        el.target.style.transition="all ease";
+    })
+    
+})

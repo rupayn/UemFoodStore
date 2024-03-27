@@ -28,6 +28,7 @@ main {
 }
 
 nav {
+  position: relative;
   color: #FFFFFF;
   background-color: #313131;
   position: relative;
@@ -37,9 +38,47 @@ nav #logo {
   font-size: 30px;
 }
 nav #navbut {
-  background-color: #FD930B;
+  /* background-color: #FD930B;
+  position: relative; */
+  padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: white;
+    background-color: #fd930b;
+    font-weight: 600;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    opacity: 0;
+    transition: ease-out 0.6s;
 }
+#navbut::after{
+  content: '';
+  position: absolute;
+  height: 52px;
+  width: 148px;
+  z-index: 5;
+  border-radius: 80%;
+  background-color: white;
+  left: 0%;
+  top: 55px;
+  transition: ease-in-out 0.6s;
+}
+#navbut:hover#navbut>a{
+  color: black;
+  transition: ease-in-out 0.6s;
+}
+#navbut>a{
+  position: relative;
+  z-index: 10;
+}
+#navbut:hover#navbut::after{
+  top: 1px;
+  transition: ease-in-out 0.6s;
 
+  border-radius: 0%;
+}
 .page1 {
   min-height: 80vh;
   width: 100vw;
@@ -78,17 +117,52 @@ nav #navbut {
   margin-left: 115px;
   margin-top: 60px;
 }
-.page1 .cont > .but > a {
+.page1 .cont > .but > button {
   background-color: #FD930B;
   color: #FFFFFF;
 }
-.page1 .cont > .but > a:nth-child(2) {
+.page1 .cont > .but > button:nth-child(2) {
   margin-left: 50px;
 }
+
+.btn1{
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.btn1::after{
+  content: '';
+  height: 48px;
+  width: 164px;
+  background-color: white;
+  color: black;
+  position: absolute;
+  z-index: 3;
+  top: 50px;
+  left: 0%;
+  border-radius: 80%;
+  transition: ease-in-out 0.6s;
+  cursor: pointer;
+}
+.btn1:hover.btn1::after{
+  top: -1px;
+  border-radius: 0;
+}
+.btn1>a{
+  position: relative;
+  z-index: 10;
+  transition: ease-in-out 0.6s;
+
+  color: white;
+}
+.btn1:hover.btn1>a{
+  color: black;
+}
+
 .page1 .fimg {
   position: absolute;
   right: 2%;
-  top: 36%;
+  top: 10%;
 }
 .page1 .fimg > img {
   height: 540px;
@@ -114,13 +188,13 @@ nav #navbut {
   border-radius: 100%;
   width: 100%;
   height: 300px;
-  background-color: #212121;
+  background-color: #212121; 
   left: -25%;
-  top: 75%;
+  top: 18%;
   z-index: 0;
   clip-path: ellipse(120% 45% at 65% 120%);
 }
-
+/* #212121 */
 .page2 {
   padding-top: 10%;
   background-color: #313131;
