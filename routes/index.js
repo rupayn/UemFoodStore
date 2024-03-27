@@ -93,7 +93,14 @@ router.post('/orders',orderController().store)
 router.get('/orders',isLoggedIn,async(req,res) => {
   let uname=req.globalSession
   orders= await orderModel.find({ user: req.user._id },null,{ sort: { 'createdAt':-1 } })
+  if(req.user.role!='admin'){ 
   res.render('customer/orders',{user:uname,orders:orders,moment:moment});
+  }else{
+  orders= await orderModel.find({ 
+    paymentType: "COD" },null,{ sort: { 'createdAt':1 } })
+  
+  res.render('admin/orders',{user:uname,orders:orders});
+  }
 
 })
 router.get('/admin/aorders',isLoggedIn,async(req,res) => {
