@@ -22,6 +22,7 @@ const authController=require('../controller/auth.controller')
 const cartController=require('../controller/cart.controller')
 const orderController=require('../controller/order.controller')
 const adminOrderController=require('../controller/admin/order.controller')
+const admin=require("./admin.middle")
 
 // const localStrategy=require('passport-local')
 const plm=require('passport-local-mongoose')
@@ -95,11 +96,31 @@ router.get('/orders',isLoggedIn,async(req,res) => {
   res.render('customer/orders',{user:uname,orders:orders,moment:moment});
 
 })
+router.get('/admin/aorders',isLoggedIn,async(req,res) => {
+  let uname=req.globalSession
+  orders= await orderModel.find({ 
+    paymentType: "COD" },null,{ sort: { 'createdAt':-1 } })
+  
+  res.render('admin/orders',{user:uname,orders:orders});
+
+})
 
 
 // Admin routes
 
-router.get("/admin/orders",adminOrderController().index)
+// router.get("/admin/orders",admin,adminOrderController().index)
+
+
+
+
+// router.get("/admin/orders",async(req,res)=>{
+//   // const orders = await orderModel.find({ status: { $ne: 'completed' } }).sort({ 'createdAt': -1 }).populate('user', '-password').exec();
+//   // let uname=req.globalSession
+//   let uname=req.globalSession
+//   let orders= await orderModel.find({user: req.user._id},null,{ sort: { 'createdAt':-1 } })
+  
+//   res.render('admin/orders', { orders,user:uname});
+// })
 
 
 module.exports = router;

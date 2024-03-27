@@ -1,8 +1,10 @@
+// import {initAdmin} from './admin'
+// const moment = require("moment")
+// const axios = require("axios")
 let movingCursor1 = document.querySelector('.cursor1');
 let movingCursor2 = document.querySelector('.cursor2');
 let addToCarts = document.querySelectorAll('.add-cart');
 
-import {initAdmin} from './admin'
 
 document.addEventListener("mousemove", (e) => {
     movingCursor1.style.left = `${e.x - 5}px`;
@@ -31,4 +33,3 @@ addToCarts.forEach((btn) => {
     });
 });
 
-initAdmin()

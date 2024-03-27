@@ -7,12 +7,39 @@
                     <th class="px-4 py-2 text-center" >Orders</th>
                     <th class="px-4 py-2 text-center" >Customer</th>
                     <th class="px-4 py-2 text-center" >Address</th>
-                    <th class="px-4 py-2 text-center" >Status</th>
+                    <th class="px-4 py-2 text-center" >Phone Number</th>
+                    <th class="px-4 py-2 text-center" >Quantity</th>
+                    <th class="px-4 py-2 text-center" >Total Price</th>
                     <!-- <th class="px-4 py-2 text-center" >Phone</th> -->
                     <th class="px-4 py-2 text-center" >Placed at</th>
                 </tr>
             </thead>
-            <tbody id="orderTableBody"></tbody>
+            
+           <tbody>
+           
+            <% orders.forEach(e => { %>
+                <% let Odr=Object(e) %>
+                <% for(let oMenu of Object.values( Odr.items )) { %>
+                    <% let a=Object.values( oMenu) %>
+                    <% for(i=0;i<a.length;i++){ %> 
+                  <tr>
+                    
+                    <td><%= a[i].item.name %>  </td>
+                    
+                    <td><%= e.customerName %></td>
+                    <td><%= e.address %></td>
+                    <td><%= e.phone %></td>
+                    <td><%= a[i].qty %></td>
+                    <td><%= a[i].qty * a[i].item.price %></td>
+                    <% let d= e.createdAt %>
+                    <td><%= d.toDateString() %></td>
+                    <td><%= d.toLocaleTimeString() %></td>
+                  </tr>
+                  <% } %>
+                <% } %>
+             <% }); %>
+                
+           </tbody>
         </table>
     </div>
 </section>
