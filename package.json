@@ -1,7 +1,9 @@
 {
-  "name": "food2",
-  "version": "0.0.0",
+  "name": "UEMFOOD",
+  "version": "1.0.0",
   "private": true,
+  "author": "Rupayan Nandi",
+  "description": "This is our web application to solve the rush problem in our college's canteen",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -29,5 +31,9 @@
     "@babel/cli": "^7.24.1",
     "@babel/core": "^7.24.3",
     "@babel/preset-env": "^7.24.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rupayan80555/UemFoodStore"
+}
 }
