@@ -10,7 +10,7 @@
 .add-cart:hover{
   background-color: #FD930B;
   color: white;
-  border: white solid;
+  /* border: white solid; */
 }
 
 .cartbtn1{
