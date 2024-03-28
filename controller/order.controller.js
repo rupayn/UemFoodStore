@@ -12,8 +12,7 @@ function orderController (){
             if(!phone||!address){
                 return res.redirect('/cart')
             }
-            // let a=req.session.cart.items;
-            // console.log(a[""]["name"])
+            
             const order= new orderModel({
                 customerName:req.user.username,
                   user:req.user._id,

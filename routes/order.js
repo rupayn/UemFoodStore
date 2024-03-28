@@ -30,22 +30,7 @@ const orderSchema = new mongoose.Schema({
     type:String,
     default: `order_placed`
   }
-/*
-{
-    // Assuming a simple schema for items
-    name: String,
-    quantity: Number,
-    price: Number
-  }
-*/
 
-
-//   totalPrice: {
-//     type: Number,
-//     required: true
-//   },
-  // You can add more fields as needed
-  // For example: address, status, deliveryTime, etc.
 }, { timestamps: true }); // Adds createdAt and updatedAt fields automatically
 
 // Create the Order model

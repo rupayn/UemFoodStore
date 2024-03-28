@@ -23,7 +23,6 @@ let localStrategy=require('passport-local');
 var app = express();
 
 
-// app.use(flash())
 
 
 
@@ -41,13 +40,7 @@ app.use(expressSession({
     collection:'sessions',
 }),
 }))
-// app.use(express.json())
-// app.use((req, res, next) => {
-//   res.locals.session = req.session
-  
-//   res.locals.user = req.user
-//   next()
-// })
+
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -64,7 +57,7 @@ passport.serializeUser(usersRouter.serializeUser())
 passport.deserializeUser(usersRouter.deserializeUser())
 
 app.use(logger('dev'));
-// app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());

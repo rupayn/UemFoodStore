@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const userModel =require('./users');
+
 const menuModel =require('./menu')
 const orderModel =require('./order')
 const passport=require('passport')
-let session= require('express-session')
+
 let bodyParser = require('body-parser');
 const moment = require("moment") 
 
@@ -19,10 +19,7 @@ router.use((req, res, next) => {
 const authController=require('../controller/auth.controller')
 const cartController=require('../controller/cart.controller')
 const orderController=require('../controller/order.controller')
-const adminOrderController=require('../controller/admin/order.controller')
-const admin=require("./admin.middle")
 
-const plm=require('passport-local-mongoose')
 
 /* GET home page. */
 router.get('/register', (req,res)=>{
@@ -107,13 +104,6 @@ router.get('/admin/aorders',isLoggedIn,async(req,res) => {
 
 })
 
-router.post('/removecart',cartController.remove)
-
-// cartController
-// (req,res) => {
-  // delete req.session.cart
-  // res.redirect('/items')
-// }
 
 
 
