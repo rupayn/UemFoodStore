@@ -40,15 +40,16 @@ addToCarts.forEach((btn) => {
 });
 
 gsap.to("nav button",{
-    // y:80,
-    duration:2,
-    // delay:,
-    // stagger: true,
+    // y:40,
+    duration:3,
+    delay:1,
+    stagger: true,
     opacity:1,
 });
 li.forEach((eli) => {
     console.log(eli.innerText);
     eli.addEventListener("mouseover",(el)=>{
+        el.target.style.cursor="pointer";
         el.target.style.transform="skew(180deg)";
         el.target.style.transition="all ease 2s";
     })
@@ -57,4 +58,25 @@ li.forEach((eli) => {
         el.target.style.transition="all ease";
     })
     
+})
+
+gsap.from("nav #logo,nav ul li,#nimg1,#nimg2",{
+    y:-50,
+    duration:2,
+    delay:0.5,
+    stagger: true,
+    opacity:0,
+});
+
+gsap.from(".cont",{
+    x:-350,
+    duration:2,
+})
+gsap.from(".fimg",{
+    x:350,
+    duration:2,
+})
+gsap.from(".gcart",{
+    x:-350,
+    duration:2,
 })
