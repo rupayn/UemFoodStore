@@ -39,24 +39,7 @@ addToCarts.forEach((btn) => {
         }
     });
 });
-function updateRemoveCart() {
-    console.log("hi");
-    axios.post('/removecart',null)
-        .then(res => {
-        })
-        .catch(err => {
-            console.error(err); // Log error
-        });
-}
 
-removeCarts.addEventListener('click', (e) => {
-        try {
-            
-            updateRemoveCart();
-        } catch (error) {
-            console.error("Error parsing menu data:", error); // Log parsing error
-        }
-});
 
 
 gsap.to("nav button",{
