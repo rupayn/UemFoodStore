@@ -25,6 +25,11 @@ function cartController() {
             }
             return res.json({ totalQty: req.session.cart.totalQty });
         },
+        remove(req, res) {
+            delete req.session.cart
+            res.redirect('/items')
+        }
+
     };
 }
 module.exports = cartController();

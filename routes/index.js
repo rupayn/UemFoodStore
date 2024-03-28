@@ -13,9 +13,7 @@ router.use(bodyParser.json())
 router.use((req, res, next) => {
   // Access the session object from the request
   req.globalSession = req.session;
-  // console.log(req.globalSession.passport);
-  // req.globalSession;
-  // console.log(`hi ${a}`);
+ 
   next();
 });
 const authController=require('../controller/auth.controller')
@@ -24,10 +22,8 @@ const orderController=require('../controller/order.controller')
 const adminOrderController=require('../controller/admin/order.controller')
 const admin=require("./admin.middle")
 
-// const localStrategy=require('passport-local')
 const plm=require('passport-local-mongoose')
 
-// passport.use(new localStrategy(userModel.authenticate()))
 /* GET home page. */
 router.get('/register', (req,res)=>{
   let uname=req.globalSession
@@ -40,7 +36,6 @@ router.post("/register", authController().postsignup);
 
 router.get('/login',(req, res)=>{
   
-  // console.log(uname);
   res.render('auth/login',{ layout: false });
 },);
 router.post('/login',passport.authenticate('local', {
@@ -69,12 +64,12 @@ router.get('/items',isLoggedIn, async(req, res) => {
     const menus = await menuModel.find()
     res.render('items',{menus,user:uname});
   
-  // res.render('items');
+  
 });
 router.get('/cart',isLoggedIn, (req, res) => {
   let uname=req.globalSession;
   scart=req.session.cart;
-  // console.log(scart.items);
+  
   
   res.render('customer/cart',{user:uname,scart});
 });
@@ -112,26 +107,17 @@ router.get('/admin/aorders',isLoggedIn,async(req,res) => {
 
 })
 
+router.post('/removecart',cartController.remove)
 
-// Admin routes
+// cartController
+// (req,res) => {
+  // delete req.session.cart
+  // res.redirect('/items')
+// }
 
-// router.get("/admin/orders",admin,adminOrderController().index)
 
 
 
-
-// router.get("/admin/orders",async(req,res)=>{
-//   // const orders = await orderModel.find({ status: { $ne: 'completed' } }).sort({ 'createdAt': -1 }).populate('user', '-password').exec();
-//   // let uname=req.globalSession
-//   let uname=req.globalSession
-//   let orders= await orderModel.find({user: req.user._id},null,{ sort: { 'createdAt':-1 } })
-  
-//   res.render('admin/orders', { orders,user:uname});
-// })
 
 
 module.exports = router;
-
-// router.get('/login', (req, res) => {
-//   res.render('login',{ layout: false });
-// });
