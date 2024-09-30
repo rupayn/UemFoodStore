@@ -58,6 +58,7 @@ router.get('/',(req, res) => {
 router.get('/items',isLoggedIn, async(req, res) => {
   let uname=req.globalSession
   
+  
     const menus = await menuModel.find()
     res.render('items',{menus,user:uname});
   
@@ -73,6 +74,19 @@ router.get('/cart',isLoggedIn, (req, res) => {
 
 router.post('/update-cart',cartController.update)
 
+router.post('/complete-payment',async(req,res,next)=>{
+  const {id,paydetails}=req.body;
+  oid=paydetails._id;
+  const order=await orderModel.find({_id:oid})
+  // oitem=(order[0].items)[0]
+  // objLength=Object.keys(oitem).length
+  
+  await orderModel.findByIdAndDelete({_id:oid})
+  
+  // console.log(objLength);
+  res.redirect("/orders")
+  // next()
+})
 
 router.get('/contact-us', (req, res) => {
   let uname=req.globalSession

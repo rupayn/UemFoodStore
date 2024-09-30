@@ -80,3 +80,4 @@ gsap.from(".gcart",{
     x:-350,
     duration:2,
 })
+

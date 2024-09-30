@@ -1,0 +1,82 @@
+[
+    {
+      "image": "https://oursaltykitchen.com/wp-content/uploads/2020/02/instant-pot-chicken-curry-featured.jpg",
+      "name": "Rice & Chicken",
+      "price": 50
+    },
+    {
+      "image": "https://karanfoodfanatic.files.wordpress.com/2017/04/chicken-thali.jpg",
+      "name": "Chicken Thali",
+      "price": 60
+    },
+    {
+      "image": "https://c8.alamy.com/zooms/9/bfd1a4e47e4f423f852033d42d73e570/2ayn85a.jpg",
+      "name": "Fish Thali",
+      "price": 50
+    },
+    {
+      "image": "https://i.pinimg.com/originals/79/38/9d/79389da025538d50a11194e54a6972bf.jpg",
+      "name": "Egg Thali",
+      "price": 45
+    },
+    {
+      "image": "https://peekncooksa.blob.core.windows.net/index-thali/Bengali_Veg_Thali.jpg",
+      "name": "Veg Thali",
+      "price": 40
+    },
+    {
+      "image": "https://imgmedia.lbb.in/media/2023/05/6476fd5a9fa97008b3ded602_1685519706838.jpg",
+      "name": "Biriyani",
+      "price": 70
+    },
+    {
+      "image": "https://assets-global.website-files.com/60d34b8627f6e735cf28df18/6491c4e169620be15dad943f_Polao%20Hero%204.3.jpg",
+      "name": "Polao",
+      "price": 60
+    },
+    {
+      "image": "https://shwetainthekitchen.com/wp-content/uploads/2023/06/veg-fried-rice.jpg",
+      "name": "Fried Rice",
+      "price": 50
+    },
+    {
+      "image": "https://myfoodstory.com/wp-content/uploads/2019/10/easy-chinese-chilli-chicken-dry-4-500x500.jpg",
+      "name": "Chilly Chicken",
+      "price": 40
+    },
+    {
+      "image": "https://i.ytimg.com/vi/gbygXUDbf2Q/maxresdefault.jpg",
+      "name": "Chawomin",
+      "price": 40
+    },
+    {
+      "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/02/paneer-curry-recipe.jpg",
+      "name": "Paneer Carry",
+      "price": 50
+    },
+    {
+      "image": "https://www.thecuriouschickpea.com/wp-content/uploads/2020/11/homemade-roti-8.jpg",
+      "name": "Roti",
+      "price": 7
+    },
+    {
+      "image": "https://t3.ftcdn.net/jpg/00/55/44/84/360_F_55448460_sHIam9MLKjlADySvmDmQ3H8TiVebn3IW.jpg",
+      "name": "Nan",
+      "price": 10
+    },
+    {
+      "image": "https://www.livofy.com/health/wp-content/uploads/2023/03/2023_01_25_creamy_chana_masala_1.jpg",
+      "name": "Chana Masala",
+      "price": 40
+    },
+    {
+      "image": "https://www.cookwithmanali.com/wp-content/uploads/2023/01/Mixed-Veg-Sabzi.jpg",
+      "name": "Mix veg",
+      "price": 40
+    },
+    {
+      "image": "https://www.jiomart.com/images/product/original/490007349/mother-dairy-misti-doi-80-g-cup-product-images-o490007349-p590041373-0-202206141817.jpg?im=Resize=(1000,1000)",
+      "name": "Misti Doi",
+      "price": 10
+    }
+  ]

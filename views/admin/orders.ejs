@@ -1,47 +1,58 @@
 <section class="orders light-section" >
     <div class="container mx-auto pt-12" >
         <h1 class="font-bold text-center mb-10 border-b pb-5 text-3xl " >All Orders</h1>
-        <table class="w-11/12 table-auto mx-auto mb-20 bg-gray-400">
-            <thead>
-                <tr class="text-black">
-                    <th class="px-4 py-2 border text-center" >Orders</th>
-                    <th class="px-4 py-2 border text-center" >Customer</th>
-                    <th class="px-4 py-2 border text-center" >Address</th>
-                    <th class="px-4 py-2 border text-center" >Phone Number</th>
-                    <th class="px-4 py-2 border text-center" >Quantity</th>
-                    
-                    <!-- <th class="px-4 py-2 text-center" >Phone</th> -->
-                    <th class="px-4 py-2 border text-center" >Placed at</th>
-                    <th class="px-4 py-2 border text-center" >Order Time</th>
-                    <th class="px-4 py-2 border text-center" >Total Price</th>
-                </tr>
-            </thead>
-            
-           <tbody>
-           
-            <% orders.forEach(e => { %>
-                <% let Odr=Object(e) %>
-                <% for(let oMenu of Object.values( Odr.items )) { %>
-                    <% let a=Object.values( oMenu) %>
-                    <% for(i=0;i<a.length;i++){ %> 
-                  <tr class="border text-green-800">
-                    
-                    <td class="text-center border px-4 py-2" ><%= a[i].item.name %>  </td>
-                    
-                    <td class="text-center border px-4 py-2" ><%= e.customerName %></td>
-                    <td class="text-center border px-4 py-2" ><%= e.address %></td>
-                    <td class="text-center border px-4 py-2" ><%= e.phone %></td>
-                    <td class="text-center border px-4 py-2" ><%= a[i].qty %></td>
-                    <% let d= e.createdAt %>
-                    <td class="text-center border px-4 py-2" ><%= d.toDateString() %></td>
-                    <td class="text-center border px-4 py-2" ><%= d.toLocaleTimeString() %></td>
-                    <td class="text-center text-green border px-4 py-2" ><%= a[i].qty * a[i].item.price %></td>
-                  </tr>
-                  <% } %>
-                <% } %>
-             <% }); %>
+        <% orders.forEach(e => { %>
+            <% let Odr=Object(e) %>
+            <% for(let oMenu of Object.values( Odr.items )) { %>
+                <table class="w-11/12 table-auto mx-auto mb-20 bg-gray-400">
+                    <thead>
+                        <tr class="text-black">
+                        <th class="px-4 py-2 border text-center" >Orders</th>
+                        <th class="px-4 py-2 border text-center" >Customer</th>
+                        <th class="px-4 py-2 border text-center" >Address</th>
+                        <th class="px-4 py-2 border text-center" >Phone Number</th>
+                        <th class="px-4 py-2 border text-center" >Quantity</th>
                 
-           </tbody>
-        </table>
+                        <!-- <th class="px-4 py-2 text-center" >Phone</th> -->
+                        <th class="px-4 py-2 border text-center" >Placed at</th>
+                        <th class="px-4 py-2 border text-center" >Order Time</th>
+                        <th class="px-4 py-2 border text-center" >Total Price</th>
+                        
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                <% let a=Object.values( oMenu) %>
+                <% for(i=0;i < a.length;i++){ %> 
+                    
+            
+           
+            
+                        <tr class="border text-green-800">
+                    
+                            <td class="text-center border px-4 py-2" ><%= a[i].item.name %>  </td>
+                    
+                            <td class="text-center border px-4 py-2" ><%= e.customerName %></td>
+                            <td class="text-center border px-4 py-2" ><%= e.address %></td>
+                            <td class="text-center border px-4 py-2" ><%= e.phone %></td>
+                            <td class="text-center border px-4 py-2" ><%= a[i].qty %></td>
+                            <% let d= e.createdAt %>
+                            <td class="text-center border px-4 py-2" ><%= d.toDateString() %></td>
+                            <td class="text-center border px-4 py-2" ><%= d.toLocaleTimeString() %></td>
+                            <td class="text-center text-green border px-4 py-2" ><%= a[i].qty * a[i].item.price %></td>
+                            
+                        </tr>
+                  
+                
+                        <% } %>
+                        <tr>
+                            <td class="relative py-4 left-[72rem]">
+                                <button paycom="<%= JSON.stringify(Odr) %>" class="w-full  bg-green-600 p-3 rounded-full payCom">Payment done</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        <% } %>
+     <% }); %>
     </div>
 </section>

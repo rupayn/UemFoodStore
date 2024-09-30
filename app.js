@@ -11,7 +11,7 @@ let bodyParser = require('body-parser');
 let flash=require('express-flash')
 
 
-const db_url=process.env.DBURL;
+// const db_url=process.env.DBURL;
 // let passport=require('passport')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,7 +23,7 @@ let localStrategy=require('passport-local');
 var app = express();
 
 
-
+// connect
 
 
 // view engine setup

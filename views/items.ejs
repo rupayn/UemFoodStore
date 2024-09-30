@@ -17,6 +17,7 @@
   <h1 class="text-white font-bold border-y-2 inline-block text-4xl mb-20">All Items</h1>
  </div>
  <div class="grid grid-cols-4 mb-8 gap-20">
+  <% if(user.passport.user !=='admin'){ %>
   <% menus.forEach(function(menu){ %>
   <div class="flex flex-col border-solid rounded-3xl pt-8 border-2 border-lime-600 items-center justify-center my-5">
     <img src="<%= menu.image %>" class="rounded-full food-img" alt="">
@@ -27,5 +28,17 @@
     </div>
    </div>
    <% }) %>
+   <% } else { %>
+    <% menus.forEach(function(menu){ %>
+      <div class="flex flex-col border-solid rounded-3xl pt-8 border-2 border-lime-600 items-center justify-center my-5">
+        <img src="<%= menu.image %>" class="rounded-full food-img" alt="">
+        <h1 class="text-2xl py-8 text-white "><%= menu.name %></h1>
+        <div class="flex items-center font-bold text-2xl mb-8 text-white w-11/12 justify-around">
+          <p>₹<%= menu.price %></p>
+          <button data-menu="<%= JSON.stringify(menu) %>"  class="add-cart text-lg font-bold  rounded-3xl py-2 px-6 rounded-full">+ Add</button>
+        </div>
+       </div>
+       <% }) %>
+   <% } %>
  </div>
 </section>

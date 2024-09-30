@@ -132,20 +132,20 @@ nav #navbut {
 }
 .btn1::after{
   content: '';
-  height: 48px;
+  height: 58px;
   width: 164px;
   background-color: white;
   color: black;
   position: absolute;
   z-index: 3;
-  top: 50px;
+  top: 54px;
   left: 0%;
   border-radius: 80%;
   transition: ease-in-out 0.6s;
   cursor: pointer;
 }
 .btn1:hover.btn1::after{
-  top: -1px;
+  top: 3px;
   border-radius: 0;
 }
 .btn1>a{

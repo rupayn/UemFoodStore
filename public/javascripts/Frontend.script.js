@@ -22,21 +22,18 @@ function updateCart(menu) {
         .then(res => {
         })
         .catch(err => {
-            console.error(err); // Log error
+            alert(err); // Log error
         });
 }
 
-addToCarts.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-        try {
-            let menu = JSON.parse(btn.dataset.menu);
-            updateCart(menu);
-        } catch (error) {
-            console.error("Error parsing menu data:", error); // Log parsing error
-        }
-    });
-});
-
+function completeItempaydetails(paydetails){
+    let id=(paydetails.items)[0]
+    axios.post('/complete-payment',{id,paydetails})
+    
+    setTimeout(()=>{
+        location.reload();
+    },500)
+}
 
 
 
@@ -80,4 +77,40 @@ gsap.from(".fimg",{
 gsap.from(".gcart",{
     x:-350,
     duration:2,
+})
+
+let btns=document.querySelectorAll(".add-cart")
+let completePay=document.querySelectorAll(".payCom")
+
+btns.forEach((btn) => {
+    btn.addEventListener("click",()=>{
+        alert("item added successfully")
+    })
+})
+
+addToCarts.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        try {
+            let menu = JSON.parse(btn.dataset.menu);
+            updateCart(menu);
+        } catch (error) {
+            console.error("Error parsing menu data:", error); // Log parsing error
+        }
+    });
+});
+
+
+completePay.forEach((btn) => {
+    btn.addEventListener("click",async()=>{
+        try {
+            // let menu =await JSON.parse(btn.dataset.paycom);
+            const p=btn.getAttribute("paycom");
+            let paydetails=await JSON.parse(p)
+            completeItempaydetails(paydetails)
+            
+        } catch (error) {
+            console.error("Error parsing menu data:", error); // Log parsing error
+        }
+        // console.log(btn.dataset)
+    })
 })
